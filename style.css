@@ -1038,6 +1038,23 @@ body {
   text-align: center;
   width: 25px;
   height: 25px;
+  outline: none;
+}
+
+.counter-input input::-webkit-outer-spin-button,
+.counter-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.counter-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.counter-input input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 .counter-btn {
