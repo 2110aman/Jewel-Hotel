@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Jewel Hotel - Experience Modern Comfort in Manhattan</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font.css" />
+    <!-- Google Fonts -->
+     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Trocchi&display=swap" rel="stylesheet">
+  <body>
+    <!-- Navigation Bar Container -->
+    <div class="navbar-container">
+      <!-- Desktop Navigation -->
+      <div class="desktop-nav">
+        <!-- Upper Navigation Part -->
+        <div class="upper-nav">
+          <div class="nav-content">
+            <!-- Left: Phone Number -->
+            <div class="contact-info left-contact-info">
+              <i><img src="images/emailIcon.svg" alt="Phone" /></i>
+              <span>Call us: +1.212.863.0550</span>
+            </div>
+
+            <!-- Center: Logo -->
+            <div class="logo">
+              <a href="#home"><img src="images/logo.png" alt="Logo" /></a>
+            </div>
+
+            <!-- Right: Email -->
+            <div class="contact-info right-contact-info">
+              <i><img src="images/phoneicon.svg" alt="Phone" /></i>
+              <span>info@thejewelny.com</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lower Navigation Part -->
+        <div class="lower-nav">
+          <div class="nav-content">
+            <!-- Navigation Menu -->
+            <nav class="main-nav">
+              <ul class="nav-list">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#location" class="nav-link">Our Location</a></li>
+                <li><a href="#rooms" class="nav-link">Rooms</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#dine" class="nav-link">Dine & Drink</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#offers" class="nav-link">Offers</a></li>
+              </ul>
+            </nav>
+
+            <!-- Book Now Button -->
+            <button class="btn-book-now-desktop book-now-button">BOOK NOW</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav">
+        <div class="mobile-nav-header">
+          <!-- Mobile Logo -->
+          <div class="mobile-logo">
+            <a href="#home"><img src="images/logo.png" alt="Logo" /></a>
+          </div>
+
+          <!-- Mobile Actions -->
+          <div class="mobile-actions">
+            <button class="btn-book-now-mobile book-now-button">BOOK NOW</button>
+            <button class="hamburger-menu" id="hamburger-menu">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+          <div class="mobile-menu-content">
+            <!-- Mobile Menu Header -->
+            <div class="mobile-menu-header">
+              <div class="mobile-menu-logo">
+                <a href="#home"><img src="images/logo.png" alt="Logo" /></a>
+              </div>
+              <button class="close-menu" id="close-menu">
+                <span class="close-line"></span>
+                <span class="close-line"></span>
+              </button>
+            </div>
+
+            <!-- Mobile Navigation Items -->
+            <nav class="mobile-main-nav">
+              <ul class="mobile-nav-list">
+                <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+                <li>
+                  <a href="#location" class="mobile-nav-link">Our Location</a>
+                </li>
+                <li><a href="#rooms" class="mobile-nav-link">Rooms</a></li>
+                <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+                <li>
+                  <a href="#dine" class="mobile-nav-link">Dine & Drink</a>
+                </li>
+                <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+                <li><a href="#offers" class="mobile-nav-link">Offers</a></li>
+                <li class="mobile-book-now-item">
+                  <button class="btn-book-now-mobile book-now-button">BOOK NOW</button>
+                </li>
+              </ul>
+              <!-- Mobile Contact Info -->
+              <div class="mobile-contact-info">
+                <div class="mobile-contact-item">
+                  <i><img src="images/emailIcon.svg" alt="Phone" /></i>
+                  <span>Call us: +1.212.863.0550</span>
+                </div>
+                <div class="mobile-contact-item">
+                  <i><img src="images/phoneicon.svg" alt="Email" /></i>
+                  <span>info@thejewelny.com</span>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <img src="images/heroImage.jpg" alt="Hero Image" class="hero-image" />
+      <div class="hero-overlay">
+        <h2 class="hero-title-1">
+          Experience Modern Comfort in <br />
+          the
+        </h2>
+        <h2 class="hero-title-2">Heart of Manhattan</h2>
+        <h2 class="hero-title-3">at The Jewel Hotel</h2>
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+          <i><img src="images/downArrow.svg" alt="Scroll" /></i>
+        </div>
+      </div>
+      <!-- Side Elements -->
+      <div class="side-elements">
+        <!-- Hamburger Menu -->
+        <div class="horizontal-lines">
+          <div class="horizontal-line"></div>
+          <div class="horizontal-line active"></div>
+          <div class="horizontal-line"></div>
+          <div class="horizontal-line"></div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+          <div class="social-icons-line"></div>
+          <a href="#" class="social-link">
+            <img src="images/ri_facebook-fill.svg" alt="Facebook" />
+          </a>
+          <a href="#" class="social-link">
+            <img src="images/mdi_instagram.svg" alt="Instagram" />
+          </a>
+          <div class="social-icons-line"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Booking Availability Widget -->
+    <section class="booking-widget">
+      <!-- <div class="booking-form"> -->
+      <div class="form-row">
+        <!-- Arrival Date -->
+        <div class="form-group arrival">
+          <p class="form-title">Arrival</p>
+          <div class="data-input">
+            <input type="text" value="12/06/2020" readonly />
+            <img
+              src="images/calender.svg"
+              alt="Calendar"
+              class="calendar-icon"
+            />
+          </div>
+        </div>
+
+        <!-- Departure Date -->
+        <div class="form-group Departure">
+          <p class="form-title">Departure</p>
+          <div class="data-input">
+            <input type="text" value="12/07/2020" readonly />
+            <img
+              src="images/calender.svg"
+              alt="Calendar"
+              class="calendar-icon"
+            />
+          </div>
+        </div>
+
+        <!-- Adults -->
+        <div class="form-group adults">
+          <p class="form-title">Adults</p>
+          <div class="counter-input">
+            <button class="counter-btn minus">
+              <img src="images/minus.svg" alt="Minus" />
+            </button>
+            <input type="number" value="1" min="1" />
+            <button class="counter-btn plus">
+              <img src="images/plus.svg" alt="Plus" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Children -->
+        <div class="form-group children">
+          <p class="form-title">Children</p>
+          <div class="counter-input">
+            <button class="counter-btn minus">
+              <img src="images/minus.svg" alt="Minus" />
+            </button>
+            <input type="number" value="1" min="0" />
+            <button class="counter-btn plus">
+              <img src="images/plus.svg" alt="Plus" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Promo Code -->
+        <div class="form-group promo-code">
+          <div class="data-input">
+            <input type="text" placeholder="Promo Code" />
+          </div>
+        </div>
+
+        <!-- Check Availability Button -->
+        <div class="form-group check-availability">
+          <button class="btn-check-availability">CHECK AVAILABILITY</button>
+        </div>
+      </div>
+      <!-- </div> -->
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stats-container">
+        <div class="stats-image-container">
+          <img
+            src="images/image1.jpg"
+            alt="Hotel Building"
+            class="stats-image"
+          />
+        </div>
+        <div class="stats-frame"></div>
+        <div class="stats-text-container">
+          <div class="stats-large">+100000 <span>customers</span></div>
+          <div class="stats-description">
+            Since 2010, +100000 customers have booked with us.
+          </div>
+          <button class="btn-book-stats">BOOK NOW</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Jewel Hotel Section -->
+    <section class="advantages-section">
+      <div class="advantages-grid">
+        <div class="advantage-item exception-item">
+          <div class="advantage-title-area">
+          <div class="advantage-subtitle advantage-subtitle-1">Why choose Jewel Hotel</div>
+          <h4 class="advantage-main-title advantage-main-title-1">The Advantages</h4>
+          </div>
+        </div>
+
+        <div class="advantage-item">
+          <div class="advantage-icon"><img src="./images/wifi.svg" alt="wifi"></div>
+      
+          <div class="advantage-title-area">
+          <div class="advantage-title">Free Wi-Fi</div>
+          <div class="advantage-description">Ultra Fast InternetUltra Fast Internet</div>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-icon"><img src="./images/bottle.svg" alt="bottle"></div>
+          <div class="advantage-title-area">
+          <div class="advantage-title">Free Bottled Water</div>
+          <div class="advantage-description">Refresh on the go</div>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-icon"><img src="./images/location.svg" alt="location"></div>
+          <div class="advantage-title-area">
+          <div class="advantage-title">Ideal Location</div>
+          <div class="advantage-description">
+            In the heart of Midtown Manhattan
+          </div>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-icon"><img src="./images/coffee.svg" alt="coffee"></div>
+          <div class="advantage-title-area">
+          <div class="advantage-title">Free Coffee & Tea</div>
+          <div class="advantage-description">
+            Keurig® brewing at your fingertips
+          </div>
+          </div>
+        </div>
+        <div class="advantage-item">
+          <div class="advantage-icon"><img src="./images/tv.svg" alt="tv"></div>
+          <div class="advantage-title-area">
+          <div class="advantage-title">Smart TVs</div>
+          <div class="advantage-description">With streaming and more</div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+      <div class="location-container">
+        <div class="location-header">
+          <div class="location-content">
+            <div class="location-title">The Center Of New York <span>Is The  <br> Center Of Everywhere</span></div>
+            <button class="btn-explore-rooms">EXPLORE OUR ROOMS</button>
+          </div>
+          <div class="location-description">
+           <p>Welcome to The Jewel Hotel – a hidden gem in the heart of Manhattan, perfect for urban adventurers.</p>
+            <p>Located steps from Rockefeller Center, Times Square, Broadway, Radio City Music Hall, and 5th Avenue shopping, The Jewel places you at the center of NYC's excitement. </p>
+            <p>After exploring, unwind in modern guest rooms with high-speed Wi-Fi and smart TVs. Enjoy complimentary cappuccinos, bottled water, and attentive service, ensuring your New York City stay is unforgettable.</p>
+          </div>
+        </div>
+        <div class="location-image-container">
+          <div class="location-image-overlay"></div>
+          <div class="location-image"><img src="images/jewel .jpg" alt="The Jewel Hotel Building" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms-section">
+      <div class="rooms-container">
+        <div class="rooms-header">
+          <div class="rooms-title-area">
+            <div class="rooms-subtitle">Relax In Comfort: Discover Our <br>
+            <span >Modern Rooms</span> </div>
+            <div class="rooms-description">Modern guest rooms with the latest high-tech amenities, plus all the little <br>thoughtful extras that add up to an exceptional stay in NYC.</div>
+          </div>
+        </div>
+        <div class="rooms-display">
+          <div class="main-room-card">
+            <div class="room-image-gallery">
+              <img src="images/img1.jpg" alt="Deluxe Two Room Suite" class="room-main-image" />
+              <div class="image-navigation">
+                <button class="nav-arrow left-arrow"> <img src="images/left.svg" alt="leftArrow"></button>
+                <button class="nav-arrow right-arrow"> <img src="images/right.svg" alt="rightArrow"></button>
+              </div>
+            </div>
+            <div class="room-info-container">
+            <div class="room-info">
+              <h4 class="room-name">Deluxe Two Room Suite</h4>
+              <h6 class="room-price">From <span class="price-amount">$99.00</span>/night</h6>
+              <div class="room-features">
+                <div class="feature-item">
+                  <div class="feature-icon"><img src="images/2people.svg" alt="users"></div>
+                  <div class="feature-text">1-4 Guests</div>
+                </div>
+                <div class="divider"></div>
+                <div class="feature-item">
+                  <div class="feature-icon"><img src="images/bed.svg" alt="bed"></div>
+                  <div class="feature-text">1 Queen Bed + 1 Full Sized Bed</div>
+                </div>
+                <div class="divider"></div>
+                <div class="feature-item">
+                  <div class="feature-icon"><img src="images/dinner.svg" alt="kitchenette"></div>
+                  <div class="feature-text">Kitchenette</div>
+                </div>
+              </div>
+              <div class="room-actions">
+                <button class="btn-more-info">MORE INFORMATION</button>
+                <button class="btn-book-room">BOOK NOW</button>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="room-thumbnails">
+            <div class="thumbnail-card active">
+              <img src="images/img1.jpg" alt="Deluxe Two Room Suite" />
+              <div class="thumbnail-text">Deluxe Two Room Suite</div>
+            </div>
+            <div class="thumbnail-card">
+              <img src="images/img2.jpg" alt="Superior Room" />
+              <div class="thumbnail-text">Superior Room</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- Location Section -->
+        <section class="location-section">
+          <div class="location-container">
+            <div class="location-header">
+              <div class="location-content">
+                <div class="location-title">Meeting <span>Space</span> and Event Space <span>for All Your Business and Social Needs</span></div>
+              </div>
+              <div class="location-description">
+                <p>The Jewel Hotel provides a perfect indoor/outdoor setting for corporate luncheons, dinners, weddings and other special events in Manhattan while enjoying a spectacular view of Rockefeller Center and St. Patrick’s Cathedral.</p>
+              </div>
+            </div>
+            <div class="location-image-container">
+              <div class="location-image-overlay"></div>
+              <div class="location-image"><img src="images/image22.jpg" alt="The Jewel Hotel Building" /></div>
+            </div>
+          </div>
+        </section>
+
+    <!-- Dine & Drink Section -->
+    <section class="dine-section">
+      <div class="dine-container">
+        <div class="dine-title">
+          <h2>Dine & Drink: <span>Exceptional Cuisine <br> At Your Doorstep</span></h2>
+        </div>
+        <div class="dine-content">
+          <div class="dine-left-image">
+            <img src="images/dine-section-image-1.png" alt="Restaurant Interior" />
+          </div>
+          <div class="dine-right-image">
+            <img src="images/dine-section-image-2.png" alt="Sushi Platter" />
+            <div class="dine-overlay">
+              <div class="dine-text">
+                <p>Indulge In Unique Sushi And <br> Sake Pairings At Hama.</p>
+                <button class="btn-see-more">SEE MORE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="offers-section">
+      <div class="offers-container">
+        <div class="offers-header">
+          <div class="offers-title">
+            <h2>Special <span>Offers</span></h2>
+            <p>Receive these offers only when you book through this site.</p>
+          </div>
+        </div>
+        <div class="offers-carousel">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <div class="offer-card active">
+                <div class="card-image">
+                  <img src="images/crown1.jpg" alt="Advance Purchase" />
+                </div>
+                <div class="card-content">
+                  <h3>Advance Purchase</h3>
+                  <h4>PLAN AHEAD FOR PERKS</h4>
+                  <p>The farther ahead you book, the more you will save.</p>
+                  <div class="card-buttons">
+                    <button class="btn-more-details">MORE DETAILS</button>
+                    <button class="btn-book-now book-now-button">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-card">
+                <div class="card-image">
+                  <img src="images/crown2.jpg" alt="Work. Play. Stay." />
+                </div>
+                <div class="card-content">
+                  <h3>Work. Play. Stay.</h3>
+                  <h4>STAY MORE AND SAVE MORE</h4>
+                  <p>Save up to 15% off our best flexible rate</p>
+                  <div class="card-buttons">
+                    <button class="btn-more-details">MORE DETAILS</button>
+                    <button class="btn-book-now book-now-button">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-card">
+                <div class="card-image">
+                  <img src="images/crown3.jpg" alt="Meeting & Group Offer" />
+                </div>
+                <div class="card-content">
+                  <h3>Meeting & Group Offer</h3>
+                  <p>Book a stay for your group now through December 31 to receive exclusive discounted rates.</p>
+                  <div class="card-buttons">
+                    <button class="btn-more-details">MORE DETAILS</button>
+                    <button class="btn-book-now book-now-button" >BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-card">
+                <div class="card-image">
+                  <img src="images/crown1.jpg" alt="Work. Play. Stay." />
+                </div>
+                <div class="card-content">
+                  <h3>Work. Play. Stay.</h3>
+                  <h4>STAY MORE AND SAVE MORE</h4>
+                  <p>Save up to 15% off our best flexible rate</p>
+                  <div class="card-buttons">
+                    <button class="btn-more-details">MORE DETAILS</button>
+                    <button class="btn-book-now book-now-button">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-card">
+                <div class="card-image">
+                  <img src="images/crown2.jpg" alt="Meeting & Group Offer" />
+                </div>
+                <div class="card-content">
+                  <h3>Meeting & Group Offer</h3>
+                  <p>Book a stay for your group now through December 31 to receive exclusive discounted rates.</p>
+                  <div class="card-buttons">
+                    <button class="btn-more-details">MORE DETAILS</button>
+                    <button class="btn-book-now book-now-button">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-card">
+                <div class="card-image">
+                  <img src="images/crown1.jpg" alt="Advance Purchase" />
+                </div>
+                <div class="card-content">
+                  <h3>Advance Purchase</h3>
+                  <h4>PLAN AHEAD FOR PERKS</h4>
+                  <p>The farther ahead you book, the more you will save.</p>
+                  <div class="card-buttons">
+                    <button class="btn-more-details">MORE DETAILS</button>
+                    <button class="btn-book-now book-now-button">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-card">
+                <div class="card-image">
+                  <img src="images/crown3.jpg" alt="Meeting & Group Offer" />
+                </div>
+                <div class="card-content">
+                  <h3>Meeting & Group Offer</h3>
+                  <p>Book a stay for your group now through December 31 to receive exclusive discounted rates.</p>
+                  <div class="card-buttons">
+                    <button class="btn-more-details">MORE DETAILS</button>
+                    <button class="btn-book-now book-now-button">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="offer-card">
+                <div class="card-image">
+                  <img src="images/crown2.jpg" alt="Meeting & Group Offer" />
+                </div>
+                <div class="card-content">
+                  <h3>Meeting & Group Offer</h3>
+                  <p>Book a stay for your group now through December 31 to receive exclusive discounted rates.</p>
+                  <div class="card-buttons">
+                    <button class="btn-more-details">MORE DETAILS</button>
+                    <button class="btn-book-now book-now-button">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+              <div class="offer-card">
+                <div class="card-image">
+                  <img src="images/crown2.jpg" alt="Meeting & Group Offer" />
+                </div>
+                <div class="card-content">
+                  <h3>Meeting & Group Offer</h3>
+                  <p>Book a stay for your group now through December 31 to receive exclusive discounted rates.</p>
+                  <div class="card-buttons">
+                    <button class="btn-more-details">MORE DETAILS</button>
+                    <button class="btn-book-now book-now-button">BOOK NOW</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="carousel-navigation">
+            <button class="nav-arrow-carousel prev-arrow">
+              <img src="images/leftarrow.svg" alt="Previous" />
+            </button>
+            <div class="carousel-dots">
+              <span class="rectangle active"></span>
+              <span class="rectangle"></span>
+              <span class="rectangle"></span>
+              <span class="rectangle"></span>
+              <span class="rectangle"></span>
+              <span class="rectangle"></span>
+            </div>
+            <button class="nav-arrow-carousel next-arrow">
+              <img src="images/rightarrow.svg" alt="Next" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-section">
+      <div class="social-container">
+        <div class="social-upper">
+          <div class="social-text">
+            <h2>Follow <span>@Thejewelny</span> To</h2>
+            <h2>#DiscoverThisGem</h2>
+            <p>Modern guest rooms with the latest high-tech amenities, plus all the little thoughtful extras that add up to an exceptional stay in NYC</p>
+          </div>
+        </div>
+        <div class="social-lower">
+          <div class="social-image-grid">
+            <div class="social-image-item" data-instagram="https://www.instagram.com/thejewelny/">
+              <img src="images/band1.jpg" alt="NYC Cityscape with Cathedral" />
+              <div class="instagram-logo">
+                <img src="images/instra.svg" alt="Instagram" />
+              </div>
+            </div>
+            <div class="social-image-item" data-instagram="https://www.instagram.com/thejewelny/">
+              <img src="images/band2.jpg" alt="Girls Tea Party" />
+              <div class="instagram-logo">
+                <img src="images/instra.svg" alt="Instagram" />
+              </div>
+            </div>
+            <div class="social-image-item center-image active" data-instagram="https://www.instagram.com/thejewelny/">
+              <img src="images/band3.jpg" alt="Bedside Table with Books" />
+                
+              <div class="instagram-logo">
+                <img src="images/instra.svg" alt="Instagram" />
+              </div>
+            </div>
+            <div class="social-image-item" data-instagram="https://www.instagram.com/thejewelny/">
+              <img src="images/band4.jpg" alt="Modern Skyscraper" />
+              <div class="instagram-logo">
+                <img src="images/instra.svg" alt="Instagram" />
+              </div>
+            </div>
+            <div class="social-image-item" data-instagram="https://www.instagram.com/thejewelny/">
+              <img src="images/band5.jpg" alt="Hotel Street with Taxis" />
+              <div class="instagram-logo">
+                <img src="images/Layer_x0020_1.svg" alt="Instagram" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Navigation Section -->
+    <section class="nav-section">
+      <!-- Main Container -->
+      <div class="nav-main-container">
+        
+        <!-- Div 1: Newsletter and Navigation Links (div-2.jpg) -->
+        <div class="nav-div-1">
+          <div class="nav-div-1-container">
+            <!-- Left: Newsletter Signup -->
+            <div class="newsletter-wrapper">
+              <div class="newsletter-section">
+                <div class="newsletter-text">
+                  Sign up to receive
+                  <span>Exclusive Offers</span>
+                </div>
+                <div class="newsletter-form">
+                  <input type="email" placeholder="Your email" class="newsletter-input">
+                  <button class="newsletter-btn">SUBSCRIBE</button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right: Navigation Links and Social Media -->
+            <div class="nav-links-wrapper">
+              <div class="nav-links-section">
+                <div class="nav-links">
+                  <a href="#" class="nav-link-item">Reviews</a>
+                  <a href="#" class="nav-link-item">FAQ</a>
+                  <a href="#" class="nav-link-item">Terms & Conditions</a>
+                  <a href="#" class="nav-link-item">Privacy Policy</a>
+                  <a href="#" class="nav-link-item">Your Privacy Choices</a>
+                </div>
+                <div class="social-media-icons">
+                  <a href="#" class="social-icon">
+                    <img src="images/ri_facebook-fill.svg" alt="Facebook">
+                  </a>
+                  <a href="#" class="social-icon">
+                    <img src="images/mdi_instagram.svg" alt="Instagram">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Div 2: Logo Section (div2) -->
+        <div class="nav-div-2">
+          <div class="nav-div-2-container">
+            <div class="logo-section">
+              <a href="#home" class="logo-text">
+                <img src="images/logo.png" alt="Logo" />
+              </a>
+            </div>
+          </div>
+          
+          <!-- Contact Information Bar -->
+          <div class="contact-info-bar">
+            <div class="contact-info-container">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <img src="images/phoneicon.svg" alt="Phone">
+                </div>
+                <span class="contact-text">Call us: +1.212.863.0550</span>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <img src="images/location.svg" alt="Location">
+                </div>
+                <span class="contact-text">11 West 51st Street, New York, NY 10019</span>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <img src="images/emailIcon.svg" alt="Email">
+                </div>
+                <span class="contact-text">info@thejewelny.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Div 3: Our Other Hotels Heading -->
+        <div class="nav-div-3">
+          <div class="nav-div-3-container">
+            <div class="hotels-heading">
+              <h2 class="hotels-title">Our Other Hotels</h2>
+              <div class="dropdown-icon">
+                <img src="images/downArrow.svg" alt="Dropdown">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Div 4: Hotel Cards Section -->
+        <div class="nav-div-4">
+          <div class="nav-div-4-container">
+            <div class="hotels-cards-container">
+              <!-- Hotel Card 1: World Center Hotel -->
+              <div class="hotel-card">
+                <div class="hotel-image">
+                  <img src="images/crown1.jpg" alt="World Center Hotel">
+                  <div class="hotel-overlay">
+                    <div class="hotel-location">NEW YORK</div>
+                    <div class="hotel-name">World Center Hotel</div>
+                      <div class="hotel-action">
+                        <button class="action-btn-square">
+                          <img src="images/rightarrow.svg" alt="Arrow" class="btn-arrow">
+                        </button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hotel Card 2: Hotel Boutique Grand Central -->
+              <div class="hotel-card">
+                <div class="hotel-image">
+                  <img src="images/crown2.jpg" alt="Hotel Boutique Grand Central">
+                  <div class="hotel-overlay">
+                    <div class="hotel-location">NEW YORK</div>
+                    <div class="hotel-name">Hotel Boutique Grand Central</div>
+                    <div class="hotel-action">
+                      <button class="action-btn-square">
+                        <img src="images/rightarrow.svg" alt="Arrow" class="btn-arrow">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hotel Card 3: Central Loop Hotel -->
+              <div class="hotel-card">
+                <div class="hotel-image">
+                  <img src="images/crown3.jpg" alt="Central Loop Hotel">
+                  <div class="hotel-overlay">
+                    <div class="hotel-location">NEW YORK</div>
+                    <div class="hotel-name">Central Loop Hotel</div>
+                    <div class="hotel-action">
+                      <button class="action-btn-square">
+                        <img src="images/rightarrow.svg" alt="Arrow" class="btn-arrow">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hotel Card 4: River Hotel -->
+              <div class="hotel-card">
+                <div class="hotel-image">
+                  <img src="images/crown1.jpg" alt="River Hotel">
+                  <div class="hotel-overlay">
+                    <div class="hotel-location">NEW YORK</div>
+                    <div class="hotel-name">River Hotel</div>
+                    <div class="hotel-action">
+                      <button class="action-btn-square">
+                        <img src="images/rightarrow.svg" alt="Arrow" class="btn-arrow">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hotel Card 5: The Grand Trafalgar -->
+              <div class="hotel-card">
+                <div class="hotel-image">
+                  <img src="images/crown2.jpg" alt="The Grand Trafalgar">
+                  <div class="hotel-overlay">
+                    <div class="hotel-location">NEW YORK</div>
+                    <div class="hotel-name">The Grand Trafalgar</div>
+                    <div class="hotel-action">
+                      <button class="action-btn-square">
+                        <img src="images/rightarrow.svg" alt="Arrow" class="btn-arrow">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Div 5: Footer Section -->
+        <div class="nav-div-5">
+          <div class="nav-div-5-container">
+            <div class="footer-copyright">
+              <span>© 2025 The Jewel Hotel.</span>
+            </div>
+            <div class="footer-cookie">
+              <a href="#" class="cookie-link">Cookie Preferences</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>

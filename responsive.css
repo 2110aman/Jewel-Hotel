@@ -1,0 +1,258 @@
+/* ===========================================
+   RESPONSIVE DESIGN
+   =========================================== */
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+  .navbar-container {
+    width: 100%;
+    /* max-width: 1440px; */
+  }
+
+  .upper-nav {
+    width: 100%;
+    /* max-width: 1440px; */
+  }
+}
+
+/* Desktop (1200px - 1439px) */
+@media (max-width: 1439px) {
+  .navbar-container {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+
+  .upper-nav {
+    width: 100%;
+  }
+
+  .booking-widget {
+    width: calc(100% - 150px);
+    left: 75px;
+  }
+}
+
+/* Tablet (768px - 1199px) */
+@media (max-width: 1199px) {
+  .navbar-container {
+    height: auto;
+    padding: 0;
+  }
+
+  .upper-nav {
+    height: 80px;
+    padding: 0 20px;
+  }
+
+  .lower-nav {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  .nav-list {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .booking-widget {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: calc(100% - 40px);
+    margin: 20px;
+    height: auto;
+  }
+
+  .form-row {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .form-group {
+    min-width: 200px;
+  }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+  .navbar-container {
+    height: auto;
+  }
+
+  .upper-nav {
+    height: 70px;
+    padding: 0 15px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-info {
+    font-size: 12px;
+  }
+
+  .logo h1 {
+    font-size: 24px;
+  }
+
+  .lower-nav {
+    height: auto;
+    padding: 15px;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+    padding: 0 15px;
+  }
+
+  .booking-widget {
+    width: calc(100% - 30px);
+    margin: 15px;
+    height: auto;
+  }
+
+  .booking-form {
+    padding: 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .form-group {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .side-elements {
+    right: 10px;
+    top: auto;
+    bottom: 20px;
+    transform: none;
+    flex-direction: row;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .upper-nav {
+    padding: 0 10px;
+  }
+
+  .contact-info {
+    font-size: 11px;
+  }
+
+  .logo h1 {
+    font-size: 20px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .booking-widget {
+    width: calc(100% - 20px);
+    margin: 10px;
+  }
+
+  .booking-form {
+    padding: 15px;
+  }
+
+  .btn-check-availability {
+    width: 100%;
+  }
+}
+
+/* ===========================================
+     UTILITY CLASSES
+     =========================================== */
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: white;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+/* ===========================================
+     ANIMATIONS
+     =========================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ===========================================
+     PRINT STYLES
+     =========================================== */
+
+@media print {
+  .navbar-container,
+  .side-elements,
+  .booking-widget {
+    display: none;
+  }
+
+  .hero-section {
+    height: auto;
+    min-height: 400px;
+  }
+}
