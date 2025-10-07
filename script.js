@@ -428,13 +428,44 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextArrow = document.querySelector(".next-arrow");
 
   let currentIndex = 0;
-  const cardWidth = 413;
-  const gap = 20;
+  let cardWidth = 413;
+  let gap = 20;
   const cardsToShow = 3;
+
+  // Function to update card dimensions based on screen size
+  function updateCardDimensions() {
+    if (window.innerWidth <= 768) {
+      // Mobile: one card visible, full width minus padding
+      cardWidth = window.innerWidth - 60; // 30px padding on each side
+      gap = 20;
+    } else {
+      // Desktop: original dimensions
+      cardWidth = 413;
+      gap = 20;
+    }
+  }
+
+  // Update dimensions on load and resize
+  updateCardDimensions();
+  window.addEventListener("resize", () => {
+    updateCardDimensions();
+    updateCarousel(); // Update carousel position when screen size changes
+  });
+
+  // Touch/swipe variables
+  let isDragging = false;
+  let startX = 0;
+  let currentX = 0;
+  let startTranslateX = 0;
+  let currentTranslateX = 0;
+  let velocity = 0;
+  let lastMoveTime = 0;
+  let lastMoveX = 0;
 
   function updateCarousel() {
     const translateX = -currentIndex * (cardWidth + gap);
     carouselTrack.style.transform = `translateX(${translateX}px)`;
+    currentTranslateX = translateX;
 
     // Update active states
     offerCards.forEach((card, index) => {
@@ -456,10 +487,98 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCarousel();
   }
 
-  // Event listeners
-  nextArrow.addEventListener("click", nextSlide);
-  prevArrow.addEventListener("click", prevSlide);
+  // Touch and mouse event handlers
+  function handleStart(e) {
+    isDragging = true;
 
+    const clientX = e.type === "mousedown" ? e.clientX : e.touches[0].clientX;
+    startX = clientX;
+    startTranslateX = currentTranslateX;
+    velocity = 0;
+    lastMoveTime = Date.now();
+    lastMoveX = clientX;
+
+    carouselTrack.style.transition = "none";
+    carouselTrack.classList.add("dragging");
+  }
+
+  function handleMove(e) {
+    if (!isDragging) return;
+
+    e.preventDefault();
+
+    const clientX = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
+    currentX = clientX;
+
+    const deltaX = startX - currentX;
+    currentTranslateX = startTranslateX - deltaX;
+
+    carouselTrack.style.transform = `translateX(${currentTranslateX}px)`;
+
+    // Calculate velocity for momentum
+    const now = Date.now();
+    const timeDiff = now - lastMoveTime;
+    if (timeDiff > 0) {
+      velocity = (lastMoveX - clientX) / timeDiff;
+    }
+    lastMoveTime = now;
+    lastMoveX = clientX;
+  }
+
+  function handleEnd() {
+    if (!isDragging) return;
+
+    isDragging = false;
+    carouselTrack.classList.remove("dragging");
+    carouselTrack.style.transition = "transform 0.3s ease";
+
+    // Calculate swipe threshold
+    const totalCardWidth = cardWidth + gap;
+    const swipeThreshold = totalCardWidth * 0.3;
+    const deltaX = startX - currentX;
+
+    let targetIndex = currentIndex;
+
+    // Determine target based on swipe distance
+    if (Math.abs(deltaX) > swipeThreshold) {
+      if (deltaX > 0) {
+        // Swiped left - next card
+        targetIndex = (currentIndex + 1) % offerCards.length;
+      } else {
+        // Swiped right - previous card
+        targetIndex =
+          (currentIndex - 1 + offerCards.length) % offerCards.length;
+      }
+    }
+
+    currentIndex = targetIndex;
+    updateCarousel();
+  }
+
+  // Event listeners
+  if (carouselTrack) {
+    // Touch events for mobile
+    carouselTrack.addEventListener("touchstart", handleStart, {
+      passive: false,
+    });
+    carouselTrack.addEventListener("touchmove", handleMove, { passive: false });
+    carouselTrack.addEventListener("touchend", handleEnd, { passive: false });
+
+    // Mouse events for desktop
+    carouselTrack.addEventListener("mousedown", handleStart);
+    carouselTrack.addEventListener("mousemove", handleMove);
+    carouselTrack.addEventListener("mouseup", handleEnd);
+    carouselTrack.addEventListener("mouseleave", handleEnd);
+
+    // Prevent default drag behavior
+    carouselTrack.addEventListener("dragstart", (e) => e.preventDefault());
+  }
+
+  // Arrow navigation
+  if (nextArrow) nextArrow.addEventListener("click", nextSlide);
+  if (prevArrow) prevArrow.addEventListener("click", prevSlide);
+
+  // Dot navigation
   rectangles.forEach((rectangle, index) => {
     rectangle.addEventListener("click", () => {
       currentIndex = index;
@@ -505,6 +624,54 @@ document.addEventListener("DOMContentLoaded", function () {
   const centerImage = document.querySelector(".social-image-item.center-image");
   if (centerImage) {
     setActiveItem(centerImage);
+  }
+
+  // ===========================================
+  // HOTEL CARDS SLIDER FUNCTIONALITY
+  // ===========================================
+
+  const hotelsSlider = document.querySelector(".hotels-cards-slider");
+
+  if (hotelsSlider) {
+    // Pause animation on hover
+    hotelsSlider.addEventListener("mouseenter", function () {
+      this.style.animationPlayState = "paused";
+    });
+
+    hotelsSlider.addEventListener("mouseleave", function () {
+      this.style.animationPlayState = "running";
+    });
+
+    // Touch/swipe functionality for mobile
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    hotelsSlider.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      this.style.animationPlayState = "paused";
+    });
+
+    hotelsSlider.addEventListener("touchmove", function (e) {
+      if (!isDragging) return;
+      currentX = e.touches[0].clientX;
+      const diffX = startX - currentX;
+
+      // Apply transform based on swipe
+      this.style.transform = `translateX(${-diffX}px)`;
+    });
+
+    hotelsSlider.addEventListener("touchend", function () {
+      if (!isDragging) return;
+      isDragging = false;
+
+      // Reset animation after touch
+      setTimeout(() => {
+        this.style.animationPlayState = "running";
+        this.style.transform = "";
+      }, 100);
+    });
   }
 
   console.log("The Jewel Hotel website loaded successfully!");
