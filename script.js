@@ -4,6 +4,62 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // ===========================================
+  // HERO IMAGE ROTATION FUNCTIONALITY
+  // ===========================================
+
+  const heroImages = document.querySelectorAll(".hero-image");
+  const horizontalLines = document.querySelectorAll(".horizontal-line");
+  let currentImageIndex = 0;
+  let rotationInterval;
+
+  // Function to show specific image
+  function showImage(index) {
+    // Remove active class from all images and lines
+    heroImages.forEach((img) => img.classList.remove("active"));
+    horizontalLines.forEach((line) => line.classList.remove("active"));
+
+    // Add active class to current image and line
+    heroImages[index].classList.add("active");
+    horizontalLines[index].classList.add("active");
+
+    currentImageIndex = index;
+  }
+
+  // Function to rotate to next image
+  function rotateToNextImage() {
+    const nextIndex = (currentImageIndex + 1) % heroImages.length;
+    showImage(nextIndex);
+  }
+
+  // Start automatic rotation every 7 seconds
+  function startImageRotation() {
+    rotationInterval = setInterval(rotateToNextImage, 7000);
+  }
+
+  // Stop automatic rotation
+  function stopImageRotation() {
+    if (rotationInterval) {
+      clearInterval(rotationInterval);
+    }
+  }
+
+  // Add click event listeners to horizontal lines for manual navigation
+  horizontalLines.forEach((line, index) => {
+    line.addEventListener("click", function () {
+      stopImageRotation();
+      showImage(index);
+      // Restart rotation after manual selection
+      setTimeout(startImageRotation, 2000);
+    });
+  });
+
+  // Initialize with first image
+  showImage(0);
+
+  // Start automatic rotation
+  startImageRotation();
+
+  // ===========================================
   // COUNTER FUNCTIONALITY
   // ===========================================
 
@@ -357,7 +413,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Room Thumbnail Card Functionality
   const thumbnailCards = document.querySelectorAll(".thumbnail-card");
-  const roomMainImage = document.querySelector(".room-main-image");
+  const roomMainImages = document.querySelectorAll(".room-main-image");
   const roomName = document.querySelector(".room-name");
   const priceAmount = document.querySelector(".price-amount");
   const guestCount = document.querySelector(".feature-text");
@@ -370,23 +426,47 @@ document.addEventListener("DOMContentLoaded", function () {
       price: "$99.00",
       guests: "1-4 Guests",
       bed: "1 Queen Bed + 1 Full Sized Bed",
-      image: "images/img1.jpg",
+      images: ["images/img1.jpg", "images/img2.jpg"],
     },
     {
       name: "Superior Room",
       price: "$149.00",
       guests: "1-6 Guests",
       bed: "1 Queen Bed + 2 Full Sized Bed",
-      image: "images/img2.jpg",
+      images: ["images/img2.jpg", "images/img1.jpg"],
     },
   ];
+
+  // Room image navigation variables
+  let currentRoomIndex = 0;
+  let currentRoomImageIndex = 0;
+
+  // Function to show specific room image
+  function showRoomImage(imageIndex) {
+    roomMainImages.forEach((img, index) => {
+      img.classList.toggle("active", index === imageIndex);
+    });
+    currentRoomImageIndex = imageIndex;
+  }
 
   // Function to update room information
   function updateRoomInfo(index) {
     const room = roomData[index];
+    currentRoomIndex = index;
+    currentRoomImageIndex = 0;
 
-    // Update room image
-    roomMainImage.src = room.image;
+    // Update room images
+    roomMainImages.forEach((img, imgIndex) => {
+      if (imgIndex < room.images.length) {
+        img.src = room.images[imgIndex];
+        img.style.display = "block";
+      } else {
+        img.style.display = "none";
+      }
+    });
+
+    // Show first image
+    showRoomImage(0);
 
     // Update room name
     roomName.textContent = room.name;
@@ -406,6 +486,21 @@ document.addEventListener("DOMContentLoaded", function () {
     thumbnailTexts[index].textContent = room.name;
   }
 
+  // Room image navigation functions
+  function nextRoomImage() {
+    const currentRoom = roomData[currentRoomIndex];
+    const nextIndex = (currentRoomImageIndex + 1) % currentRoom.images.length;
+    showRoomImage(nextIndex);
+  }
+
+  function prevRoomImage() {
+    const currentRoom = roomData[currentRoomIndex];
+    const prevIndex =
+      (currentRoomImageIndex - 1 + currentRoom.images.length) %
+      currentRoom.images.length;
+    showRoomImage(prevIndex);
+  }
+
   // Add click event listeners to thumbnail cards
   thumbnailCards.forEach((card, index) => {
     card.addEventListener("click", function () {
@@ -419,6 +514,25 @@ document.addEventListener("DOMContentLoaded", function () {
       updateRoomInfo(index);
     });
   });
+
+  // Add click event listeners to room navigation arrows
+  const roomPrevButton = document.getElementById("room-prev");
+  const roomNextButton = document.getElementById("room-next");
+
+  if (roomPrevButton) {
+    roomPrevButton.addEventListener("click", function () {
+      prevRoomImage();
+    });
+  }
+
+  if (roomNextButton) {
+    roomNextButton.addEventListener("click", function () {
+      nextRoomImage();
+    });
+  }
+
+  // Initialize room display
+  updateRoomInfo(0);
 
   // Special Offers Carousel Functionality
   const carouselTrack = document.querySelector(".carousel-track");
@@ -672,6 +786,43 @@ document.addEventListener("DOMContentLoaded", function () {
         this.style.transform = "";
       }, 100);
     });
+  }
+
+  // ===========================================
+  // DINE SECTION HOVER FUNCTIONALITY
+  // ===========================================
+
+  const dineLeftImage = document.getElementById("dine-left");
+  const dineRightImage = document.getElementById("dine-right");
+  const dineOverlayLeft = document.getElementById("dine-overlay-left");
+  const dineOverlayRight = document.getElementById("dine-overlay-right");
+
+  // Function to activate left overlay
+  function activateLeftOverlay() {
+    dineOverlayLeft.classList.add("active");
+    dineOverlayRight.classList.remove("active");
+  }
+
+  // Function to activate right overlay
+  function activateRightOverlay() {
+    dineOverlayRight.classList.add("active");
+    dineOverlayLeft.classList.remove("active");
+  }
+
+  // Add hover event listeners
+  if (dineLeftImage && dineRightImage) {
+    // Hover on left image - activate left overlay
+    dineLeftImage.addEventListener("mouseenter", function () {
+      activateLeftOverlay();
+    });
+
+    // Hover on right image - activate right overlay
+    dineRightImage.addEventListener("mouseenter", function () {
+      activateRightOverlay();
+    });
+
+    // When mouse leaves both images, keep the last hovered overlay active
+    // This maintains the current state until another hover occurs
   }
 
   console.log("The Jewel Hotel website loaded successfully!");

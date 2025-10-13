@@ -126,11 +126,11 @@
               <!-- Mobile Contact Info -->
               <div class="mobile-contact-info">
                 <div class="mobile-contact-item">
-                  <i><img src="images/emailIcon.svg" alt="Phone" /></i>
+                  <i><img src="images/phoneicon.svg" alt="Phone" /></i>
                   <span>Call us: +1.212.863.0550</span>
                 </div>
                 <div class="mobile-contact-item">
-                  <i><img src="images/phoneicon.svg" alt="Email" /></i>
+                  <i><img src="images/emailIcon.svg" alt="Email" /></i>
                   <span>info@thejewelny.com</span>
                 </div>
               </div>
@@ -142,7 +142,12 @@
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
-      <img src="images/heroImage.jpg" alt="Hero Image" class="hero-image" />
+      <div class="hero-images-container">
+        <img src="images/heroImage.jpg" alt="Hero Image" class="hero-image active" data-index="0" />
+        <img src="images/jewel .jpg" alt="Jewel Image" class="hero-image" data-index="1" />
+        <img src="images/heroImage.jpg" alt="Hero Image" class="hero-image" data-index="2" />
+        <img src="images/jewel .jpg" alt="Jewel Image" class="hero-image" data-index="3" />
+      </div>
       <div class="hero-overlay">
         <h2 class="hero-title-1">
           Experience Modern Comfort in <br />
@@ -157,12 +162,12 @@
       </div>
       <!-- Side Elements -->
       <div class="side-elements">
-        <!-- Hamburger Menu -->
+        <!-- Image Navigation Lines -->
         <div class="horizontal-lines">
-          <div class="horizontal-line"></div>
-          <div class="horizontal-line active"></div>
-          <div class="horizontal-line"></div>
-          <div class="horizontal-line"></div>
+          <div class="horizontal-line active" data-index="0"></div>
+          <div class="horizontal-line" data-index="1"></div>
+          <div class="horizontal-line" data-index="2"></div>
+          <div class="horizontal-line" data-index="3"></div>
         </div>
 
         <!-- Social Media Icons -->
@@ -360,10 +365,13 @@
         <div class="rooms-display">
           <div class="main-room-card">
             <div class="room-image-gallery">
-              <img src="images/img1.jpg" alt="Deluxe Two Room Suite" class="room-main-image" />
+              <div class="room-images-container">
+                <img src="images/img1.jpg" alt="Deluxe Two Room Suite" class="room-main-image active" data-index="0" />
+                <img src="images/img2.jpg" alt="Deluxe Two Room Suite" class="room-main-image" data-index="1" />
+              </div>
               <div class="image-navigation">
-                <button class="nav-arrow left-arrow"> <img src="images/left.svg" alt="leftArrow"></button>
-                <button class="nav-arrow right-arrow"> <img src="images/right.svg" alt="rightArrow"></button>
+                <button class="nav-arrow left-arrow" id="room-prev"> <img src="images/left.svg" alt="leftArrow"></button>
+                <button class="nav-arrow right-arrow" id="room-next"> <img src="images/right.svg" alt="rightArrow"></button>
               </div>
             </div>
             <div class="room-info-container">
@@ -432,12 +440,18 @@
           <h2>Dine & Drink: <span>Exceptional Cuisine <br> At Your Doorstep</span></h2>
         </div>
         <div class="dine-content">
-          <div class="dine-left-image">
+          <div class="dine-left-image" id="dine-left">
             <img src="images/dine-section-image-1.png" alt="Restaurant Interior" />
+            <div class="dine-overlay" id="dine-overlay-left">
+              <div class="dine-text">
+                <p>Indulge In Unique Sushi And <br> Sake Pairings At Hama.</p>
+                <button class="btn-see-more">SEE MORE</button>
+              </div>
+            </div>
           </div>
-          <div class="dine-right-image">
+          <div class="dine-right-image" id="dine-right">
             <img src="images/dine-section-image-2.png" alt="Sushi Platter" />
-            <div class="dine-overlay">
+            <div class="dine-overlay active" id="dine-overlay-right">
               <div class="dine-text">
                 <p>Indulge In Unique Sushi And <br> Sake Pairings At Hama.</p>
                 <button class="btn-see-more">SEE MORE</button>
@@ -720,7 +734,7 @@
             <div class="contact-info-container">
               <div class="contact-item">
                 <div class="contact-icon">
-                  <img src="images/phoneicon.svg" alt="Phone">
+                  <img src="images/emailIcon.svg" alt="Phone">
                 </div>
                 <span class="contact-text">Call us: +1.212.863.0550</span>
               </div>
@@ -732,7 +746,7 @@
               </div>
               <div class="contact-item">
                 <div class="contact-icon">
-                  <img src="images/emailIcon.svg" alt="Email">
+                  <img src="images/phoneIcon.svg" alt="Email" />
                 </div>
                 <span class="contact-text">info@thejewelny.com</span>
               </div>
